@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
 
-namespace PrintDiamond.UnitTests
+namespace PrintDiamond.UnitTests.Utils
 {
     [TestFixture()]
-    public class Test
+    public class CharAlphabeticHelperTest
     {
         [Test()]
         public void TestCase()
