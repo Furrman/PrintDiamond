@@ -32,17 +32,17 @@
     <Folder Include="DiamondStringBuilder\TestData\" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="DiamondStringBuilder\TestData\CorrectDiamondStructureA.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="DiamondStringBuilder\TestData\CorrectDiamondStructureB.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="DiamondStringBuilder\TestData\CorrectDiamondStructureC.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="DiamondStringBuilder\TestData\CorrectDiamondStructureZ.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DiamondStringBuilder\TestData\CorrectDiamondStructureA.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 </Project>

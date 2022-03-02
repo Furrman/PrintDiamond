@@ -47,13 +47,19 @@ namespace PrintDiamond.UnitTests.DiamondStringBuilder
             return result.Count(s => s == CharAlphhabeticHelper.NEW_LINE);
         }
 
-        [TestCase('A')]
-        [TestCase('a')]
-        public void CorrectNumberOfCharacterA(char character)
+        [TestCase('A', ExpectedResult = 1)]
+        [TestCase('a', ExpectedResult = 1)]
+        [TestCase('B', ExpectedResult = 2)]
+        [TestCase('b', ExpectedResult = 2)]
+        [TestCase('C', ExpectedResult = 2)]
+        [TestCase('c', ExpectedResult = 2)]
+        [TestCase('Z', ExpectedResult = 2)]
+        [TestCase('z', ExpectedResult = 2)]
+        public int CorrectNumberOfLastCharacters(char character)
         {
             var result = _diamondStringBuilder.GetDiamondText(character);
 
-            Assert.AreEqual(1, result.Count(s => s == char.ToUpper(character)));
+            return result.Count(s => s == char.ToUpper(character));
         }
 
         [TestCase('B')]
@@ -71,7 +77,7 @@ namespace PrintDiamond.UnitTests.DiamondStringBuilder
             var result = _diamondStringBuilder.GetDiamondText(character);
 
             Assert.AreEqual(2, result.Count(s => s == aChar), $"Wrong number of character {aChar}");
-            for (var i = firstCharUnicode + 1; i <= currentCharUnicode; i++)
+            for (var i = firstCharUnicode + 1; i < currentCharUnicode; i++)
             {
                 Assert.AreEqual(4, result.Count(s => s == (char)i), $"Wrong number of character {(char)i}");
             }

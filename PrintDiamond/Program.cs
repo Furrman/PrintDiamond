@@ -19,7 +19,8 @@ namespace PrintDiamond
                 return;
             }
 
-            // TODO print diamond
+            var diamondStringBuilder = new DiamondStringBuilder();
+            Console.Write(diamondStringBuilder.GetDiamondText(character));
         }
     }
 }

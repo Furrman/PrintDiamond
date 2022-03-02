@@ -1,9 +1,10 @@
 ﻿ using System;
+using System.Linq;
 using System.Text;
 
 namespace PrintDiamond
 {
-    public class DiamondStringBuilder
+    public sealed class DiamondStringBuilder
     {
         private readonly int _firstAlphaCharUnicode = CharAlphhabeticHelper.A_LETTER_UNICODE;
 
@@ -59,13 +60,13 @@ namespace PrintDiamond
         private string GetBottomPartOfDiamond(string topDiamondPart)
         {
             StringBuilder stringBuilder = new();
+            var newLine = CharAlphhabeticHelper.NEW_LINE.ToString();
 
-            var lines = topDiamondPart.Split(CharAlphhabeticHelper.NEW_LINE);
-            if (lines.Length == 1)
-            {
-                return string.Empty;
-            }
-            Array.Reverse(lines);
+            var lines = topDiamondPart
+                .Split(newLine)
+                .Where(s => s != string.Empty);
+
+            lines = lines.Reverse();
 
             foreach (var line in lines)
             {
@@ -86,10 +87,12 @@ namespace PrintDiamond
             var oneSideTrimSpace = new string(CharAlphhabeticHelper.SPACE, numberOfUsedChars - charCounter - 1);
             var insideSpace = new string(CharAlphhabeticHelper.SPACE, numberOfCharsInRow - 2 * oneSideTrimSpace.Length - numberOfLettersInRow);
 
-            if (numberOfLettersInRow == 1)
+            if (insideSpace == string.Empty)
             {
                 stringBuilder
-                    .Append(character);
+                    .Append(oneSideTrimSpace)
+                    .Append(character)
+                    .Append(oneSideTrimSpace);
             }
             else
             {
