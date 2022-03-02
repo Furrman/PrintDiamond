@@ -20,12 +20,13 @@ namespace PrintDiamond
             var numberOfUserChars = lastCharUnicode - _firstAlphaCharUnicode + 1;
 
             string topDiamondPart = GetTopPartOfDiamond(numberOfUserChars);
-            string midDiamondPart = GetMidPartOfDiamond(upperLastChar);
+            string midDiamondPart = GetMidPartOfDiamond(numberOfUserChars, upperLastChar);
             string bottomDiamondPart = GetBottomPartOfDiamond(topDiamondPart);
 
-            stringBuilder.Append(topDiamondPart);
-            stringBuilder.Append(midDiamondPart);
-            stringBuilder.Append(bottomDiamondPart);
+            stringBuilder
+                .Append(topDiamondPart)
+                .Append(midDiamondPart)
+                .Append(bottomDiamondPart);
 
             return stringBuilder.ToString();
         }
@@ -37,14 +38,23 @@ namespace PrintDiamond
             for (var i = 0; i < numberOfUserChars; i++)
             {
                 var charUnicode = _firstAlphaCharUnicode + i;
-                stringBuilder.Append(GetDiamondLine((char)charUnicode));
+                stringBuilder
+                    .Append(GetDiamondLine(i, (char)charUnicode, numberOfUserChars))
+                    .Append(CharAlphhabeticHelper.NEW_LINE);
             }
 
             return stringBuilder.ToString();
         }
 
-        private string GetMidPartOfDiamond(char upperLastChar)
-            =>  GetDiamondLine(upperLastChar);
+        private string GetMidPartOfDiamond(int numberOfUserChars, char upperLastChar)
+        {
+            StringBuilder stringBuilder = new();
+            stringBuilder
+                .Append(GetDiamondLine(numberOfUserChars - 1, upperLastChar, numberOfUserChars))
+                .Append(CharAlphhabeticHelper.NEW_LINE);
+
+            return stringBuilder.ToString();
+        }
 
         private string GetBottomPartOfDiamond(string topDiamondPart)
         {
@@ -63,13 +73,22 @@ namespace PrintDiamond
             return stringBuilder.ToString();
         }
 
-        private string GetDiamondLine(char character)
+        private string GetDiamondLine(int charCounter, char character, int numberOfUsedChars)
         {
             StringBuilder stringBuilder = new();
 
-            // TODO
+            var numberOfCharsInRow = numberOfUsedChars * 2 - 1;
+            var numberOfLettersInRow = character == CharAlphhabeticHelper.A_LETTER ? 1 : 2;
+            var oneSideTrimSpace = new string(CharAlphhabeticHelper.SPACE, numberOfUsedChars - charCounter - 1); //TODO
+            var insideSpace = new string(CharAlphhabeticHelper.SPACE, numberOfCharsInRow - 2 * oneSideTrimSpace.Length - numberOfLettersInRow);
 
-            stringBuilder.Append(CharAlphhabeticHelper.NEW_LINE);
+            stringBuilder
+                .Append(oneSideTrimSpace)
+                .Append(character)
+                .Append(insideSpace)
+                .Append(character)
+                .Append(oneSideTrimSpace)
+                .Append(CharAlphhabeticHelper.NEW_LINE);
 
             return stringBuilder.ToString();
         }
