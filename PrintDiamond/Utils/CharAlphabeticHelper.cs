@@ -1,9 +1,8 @@
-﻿using System;
-
-namespace PrintDiamond
+﻿namespace PrintDiamond
 {
-    public class CharAlphhabeticHelper
+    public static class CharAlphhabeticHelper
     {
-        private readonly char[] _alphabetCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+        public static readonly int A_LETTER_UNICODE = 'A';
+        public static readonly char[] ALPHABET_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
     }
 }

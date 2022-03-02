@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.810.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintDiamond", "PrintDiamond\PrintDiamond.csproj", "{B2CA7D4D-245F-485E-BD20-F60F31C39408}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintDiamond.UnitTests", "PrintDiamond.UnitTests\PrintDiamond.UnitTests.csproj", "{0B985C72-585D-4AEB-97C3-D6D0715C5232}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintDiamond.UnitTests", "PrintDiamond.UnitTests\PrintDiamond.UnitTests.csproj", "{D204E6B5-793F-4A21-8D58-CE53879C42F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{B2CA7D4D-245F-485E-BD20-F60F31C39408}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2CA7D4D-245F-485E-BD20-F60F31C39408}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2CA7D4D-245F-485E-BD20-F60F31C39408}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B985C72-585D-4AEB-97C3-D6D0715C5232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B985C72-585D-4AEB-97C3-D6D0715C5232}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B985C72-585D-4AEB-97C3-D6D0715C5232}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B985C72-585D-4AEB-97C3-D6D0715C5232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D204E6B5-793F-4A21-8D58-CE53879C42F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D204E6B5-793F-4A21-8D58-CE53879C42F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D204E6B5-793F-4A21-8D58-CE53879C42F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D204E6B5-793F-4A21-8D58-CE53879C42F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
