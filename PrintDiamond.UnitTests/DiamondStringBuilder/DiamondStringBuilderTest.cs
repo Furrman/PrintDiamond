@@ -20,7 +20,7 @@ namespace PrintDiamond.UnitTests.DiamondStringBuilder
         }
 
         [TestCase('A', ExpectedResult = 1 * 2)] // w x h
-        [TestCase('a', ExpectedResult = 1 * 2)] // w x h
+        [TestCase('a', ExpectedResult = 1 * 2)]
         [TestCase('B', ExpectedResult = 3 * 4)]
         [TestCase('b', ExpectedResult = 3 * 4)]
         [TestCase('C', ExpectedResult = 5 * 6)]
@@ -88,7 +88,8 @@ namespace PrintDiamond.UnitTests.DiamondStringBuilder
         public void CorrectDiamondStructure(char character)
         {
             var upperChar = char.ToUpper(character);
-            var expected = File.ReadAllText(Path.Combine(TestContext.CurrentContext.TestDirectory, "DiamondStringBuilder", $"CorrectDiamondStructure{upperChar}.txt"));
+            var expected = File.ReadAllText(Path.Combine(TestContext.CurrentContext.TestDirectory,
+                "DiamondStringBuilder", "TestData", $"CorrectDiamondStructure{upperChar}.txt"));
 
             var result = _diamondStringBuilder.GetDiamondText(upperChar);
 

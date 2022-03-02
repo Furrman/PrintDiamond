@@ -17,8 +17,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="DiamondStringBuilder\" />
+    <None Remove="DiamondStringBuilder\CorrectDiamondStructureA.txt" />
+    <None Remove="DiamondStringBuilder\CorrectDiamondStructureZ.txt" />
+    <None Remove="DiamondStringBuilder\CorrectDiamondStructureC.txt" />
+    <None Remove="DiamondStringBuilder\CorrectDiamondStructureB.txt" />
+    <None Remove="DiamondStringBuilder\Data\" />
+    <None Remove="DiamondStringBuilder\Data\CorrectDiamondStructureA.txt" />
+    <None Remove="DiamondStringBuilder\Data\CorrectDiamondStructureB.txt" />
+    <None Remove="DiamondStringBuilder\Data\CorrectDiamondStructureC.txt" />
+    <None Remove="DiamondStringBuilder\Data\CorrectDiamondStructureZ.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DiamondStringBuilder\" />
+    <Folder Include="DiamondStringBuilder\TestData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="DiamondStringBuilder\TestData\CorrectDiamondStructureA.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="DiamondStringBuilder\TestData\CorrectDiamondStructureB.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="DiamondStringBuilder\TestData\CorrectDiamondStructureC.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="DiamondStringBuilder\TestData\CorrectDiamondStructureZ.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

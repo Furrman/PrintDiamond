@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Text;
 
 namespace PrintDiamond
@@ -35,7 +35,7 @@ namespace PrintDiamond
         {
             StringBuilder stringBuilder = new();
 
-            for (var i = 0; i < numberOfUserChars; i++)
+            for (var i = 0; i < numberOfUserChars - 1; i++)
             {
                 var charUnicode = _firstAlphaCharUnicode + i;
                 stringBuilder
@@ -61,6 +61,10 @@ namespace PrintDiamond
             StringBuilder stringBuilder = new();
 
             var lines = topDiamondPart.Split(CharAlphhabeticHelper.NEW_LINE);
+            if (lines.Length == 1)
+            {
+                return string.Empty;
+            }
             Array.Reverse(lines);
 
             foreach (var line in lines)
@@ -79,16 +83,23 @@ namespace PrintDiamond
 
             var numberOfCharsInRow = numberOfUsedChars * 2 - 1;
             var numberOfLettersInRow = character == CharAlphhabeticHelper.A_LETTER ? 1 : 2;
-            var oneSideTrimSpace = new string(CharAlphhabeticHelper.SPACE, numberOfUsedChars - charCounter - 1); //TODO
+            var oneSideTrimSpace = new string(CharAlphhabeticHelper.SPACE, numberOfUsedChars - charCounter - 1);
             var insideSpace = new string(CharAlphhabeticHelper.SPACE, numberOfCharsInRow - 2 * oneSideTrimSpace.Length - numberOfLettersInRow);
 
-            stringBuilder
-                .Append(oneSideTrimSpace)
-                .Append(character)
-                .Append(insideSpace)
-                .Append(character)
-                .Append(oneSideTrimSpace)
-                .Append(CharAlphhabeticHelper.NEW_LINE);
+            if (numberOfLettersInRow == 1)
+            {
+                stringBuilder
+                    .Append(character);
+            }
+            else
+            {
+                stringBuilder
+                    .Append(oneSideTrimSpace)
+                    .Append(character)
+                    .Append(insideSpace)
+                    .Append(character)
+                    .Append(oneSideTrimSpace);
+            }
 
             return stringBuilder.ToString();
         }
