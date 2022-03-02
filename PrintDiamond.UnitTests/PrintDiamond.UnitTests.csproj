@@ -15,4 +15,10 @@
   <ItemGroup>
     <ProjectReference Include="..\PrintDiamond\PrintDiamond.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="DiamondStringBuilder\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DiamondStringBuilder\" />
+  </ItemGroup>
 </Project>
